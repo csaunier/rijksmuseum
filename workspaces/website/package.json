@@ -9,10 +9,15 @@
     "lint": "../../node_modules/.bin/eslint .",
     "preview": "../../node_modules/.bin/vite preview"
   },
+  "imports": {
+    "@assets/*": "./src/assets/*",
+    "@components/*": "./src/components/*"
+  },
   "dependencies": {
     "@rijksmuseum/library": "*",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "@fontsource-variable/inter": "^5.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
@@ -25,6 +30,7 @@
     "globals": "^15.14.0",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.18.1",
-    "vite": "^6.0.5"
+    "vite": "^6.0.5",
+    "vite-plugin-svgr": "^4.3.0"
   }
 }

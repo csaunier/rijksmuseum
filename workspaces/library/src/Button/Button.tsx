@@ -1,9 +1,21 @@
-import type {FunctionComponent} from "react";
+import type { ComponentPropsWithoutRef, ElementType, PropsWithChildren, ReactNode } from "react"
 
-export const Button: FunctionComponent = () => {
+import clsx from 'clsx';
+
+import styles from "./Button.module.css"
+
+type PolymorphicProps<E extends ElementType> = ComponentPropsWithoutRef<E> & {
+    as?: E
+}
+
+type ButtonProps<T extends ElementType> = PolymorphicProps<T> & PropsWithChildren
+
+export const Button = <T extends ElementType = "div">(props: ButtonProps<T>): ReactNode => {
+    const { as, children, className, ...restProps } = props
+    const Component = as || "button"
     return (
-        <button>
-            Button
-        </button>
+        <Component {...restProps} className={clsx(className, styles.button)}>
+            {children}
+        </Component>
     )
 }

@@ -1,3 +1,9 @@
+html {
+  font-family: "Inter Variable", sans-serif;
+  color: rgb(19, 20, 26);
+  background-image: radial-gradient( farthest-corner circle at calc(100vw /2) 200px, rgba(253, 216, 204, 0.5) 20%, rgba(255, 120, 0, 0.43) 100% );
+}
+
 body {
   margin: 0;
 }
