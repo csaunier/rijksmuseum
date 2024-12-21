@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "cd workspaces/website && vite",
-    "prettier": "prettier . --write"
+    "prettier": "prettier . --write",
+    "prepare": "husky install"
   },
   "engines": {
     "node": ">=22"
@@ -15,6 +16,8 @@
     "workspaces/website"
   ],
   "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.11",
     "prettier": "3.4.2"
   }
 }
