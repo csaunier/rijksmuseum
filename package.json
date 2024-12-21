@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "cd workspaces/website && vite"
+    "dev": "cd workspaces/website && vite",
+    "prettier": "prettier . --write"
   },
   "engines": {
     "node": ">=22"
@@ -12,5 +13,8 @@
   "workspaces": [
     "workspaces/library",
     "workspaces/website"
-  ]
+  ],
+  "devDependencies": {
+    "prettier": "3.4.2"
+  }
 }
