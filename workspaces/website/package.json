@@ -7,7 +7,8 @@
     "dev": "../../node_modules/.bin/vite",
     "build": "../../node_modules/.bin/tsc -b && vite build",
     "lint": "../../node_modules/.bin/eslint .",
-    "preview": "../../node_modules/.bin/vite preview"
+    "preview": "../../node_modules/.bin/vite preview",
+    "test": "vitest"
   },
   "imports": {
     "@assets/*": "./src/assets/*",
@@ -21,6 +22,9 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
     "@vitejs/plugin-react": "^4.3.4",
@@ -28,9 +32,11 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
+    "jsdom": "^25.0.1",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.18.1",
     "vite": "^6.0.5",
-    "vite-plugin-svgr": "^4.3.0"
+    "vite-plugin-svgr": "^4.3.0",
+    "vitest": "^2.1.8"
   }
 }
