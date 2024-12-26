@@ -3,9 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "cd workspaces/website && vite",
+    "dev": "(cd workspaces/website && npm run dev)",
     "prettier": "prettier . --write",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "(cd workspaces/website && npm run test -- --run) && (cd workspaces/library && npm run test -- --run)"
   },
   "engines": {
     "node": ">=22"
