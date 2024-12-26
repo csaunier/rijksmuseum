@@ -6,6 +6,12 @@ import { defineConfig as defineVitestConfig } from "vitest/config"
 
 const viteConfig = defineViteConfig({
   plugins: [react(), svgr()],
+  resolve: {
+    alias: {
+      "@components/*": "src/components/*",
+      "@assets/*": "src/assets/*",
+    },
+  },
 })
 
 const vitestConfig = defineVitestConfig({

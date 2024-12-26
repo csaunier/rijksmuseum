@@ -12,13 +12,14 @@
     "test": "vitest"
   },
   "imports": {
-    "@assets/*": "./src/assets/*",
-    "@components/*": "./src/components/*"
+    "@assets/*": "src/assets/*",
+    "@components/*": "src/components/*"
   },
   "dependencies": {
     "@rijksmuseum/library": "*",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-router": "^7.1.1",
     "@fontsource-variable/inter": "^5.1.0"
   },
   "devDependencies": {

@@ -16,6 +16,11 @@
     "sourceMap": true,
     "lib": ["es2022", "dom", "dom.iterable"],
     "jsx": "preserve",
-    "types": ["@testing-library/jest-dom/vitest", "vitest/globals"]
+    "types": ["@testing-library/jest-dom/vitest", "vitest/globals"],
+    "baseUrl": ".",
+    "paths": {
+      "@components/*" : ["src/components/*"],
+      "@assets/*" : ["src/assets/*"]
+    }
   }
 }

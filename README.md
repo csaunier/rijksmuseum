@@ -27,3 +27,5 @@ npm run test
 - Improve css variable management
 - Add more workspace to share configuration (typescript, eslint, lint-staged...)
 - Improve monorepo management with turboRepo
+- Why alias are not working...
+- Add a custom render for RTL (https://testing-library.com/docs/react-testing-library/setup/#custom-render) 

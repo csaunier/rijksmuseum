@@ -3,6 +3,7 @@ import LogoComponent from "../../assets/logo.svg?react"
 
 import styles from "./LandingPage.module.css"
 import { Button } from "@rijksmuseum/library/Button"
+import { NavLink } from "react-router"
 
 export const LandingPage: FunctionComponent = () => {
   return (
@@ -14,7 +15,7 @@ export const LandingPage: FunctionComponent = () => {
           for <span className={styles.accent}>WorkLife</span>
         </span>
       </h1>
-      <Button as="a" href="/collection">
+      <Button as={NavLink} to="/collections">
         Let's explore
       </Button>
       <LogoComponent className={styles.logo} aria-hidden />
