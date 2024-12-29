@@ -11,6 +11,8 @@ import { CollectionsContext } from "../../contexts/CollectionsContext"
 import { useSearchParams } from "react-router-dom"
 import { Input } from "@rijksmuseum/library/Input"
 
+import styles from "./CollectionsSearch.module.css"
+
 export const CollectionsSearch: FunctionComponent = () => {
   const { setSearch } = useContext(CollectionsContext)
   const [searchParams] = useSearchParams()
@@ -30,18 +32,17 @@ export const CollectionsSearch: FunctionComponent = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSearch}>
-        <Input
-          type="text"
-          name="search"
-          placeholder="Search in collections..."
-          ref={inputRef}
-          value={value}
-          onChange={handleChange}
-        />
-        <Button type="submit">Search</Button>
-      </form>
-    </div>
+    <form onSubmit={handleSearch} className={styles.block}>
+      <Input
+        type="text"
+        name="search"
+        placeholder="Search in collections..."
+        ref={inputRef}
+        value={value}
+        onChange={handleChange}
+        className={styles.input}
+      />
+      <Button type="submit">Search</Button>
+    </form>
   )
 }

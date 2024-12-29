@@ -9,6 +9,7 @@ export const Header = () => {
       <NavLink className={styles.link} to="/">
         <LogoComponent className={styles.logo} aria-label="Home page" />
       </NavLink>
+      Rijks Museum
     </header>
   )
 }

@@ -11,7 +11,7 @@
 .title {
   font-size: clamp(2rem, 1rem + 5vw, 4rem);
   text-align: center;
-  font-weight: 200;
+  font-weight: 100;
   padding: 24px;
   margin: 0;
 }
@@ -19,11 +19,11 @@
 .highlight {
   white-space: nowrap;
   font-size: 1.2em;
-  font-weight: 600;
+  font-weight: 300;
 }
 
 .accent {
-  font-weight: 600;
+  font-weight: 300;
 }
 
 .minor {

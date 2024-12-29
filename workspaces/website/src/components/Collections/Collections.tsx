@@ -4,13 +4,17 @@ import { CollectionShowMore } from "../CollectionsShowMore/CollectionShowMore"
 import { CollectionsListing } from "../CollectionsListing/CollectionsListing"
 import { CollectionsProvider } from "../../contexts/CollectionsProvider"
 
+import styles from "./Collections.module.css"
+
 export const Collections: FunctionComponent = () => {
   return (
-    <CollectionsProvider>
-      <h1>Collections</h1>
-      <CollectionsSearch />
-      <CollectionsListing />
-      <CollectionShowMore />
-    </CollectionsProvider>
+    <main className={styles.main}>
+      <CollectionsProvider>
+        <h1 className={styles.title}>Collections</h1>
+        <CollectionsSearch />
+        <CollectionsListing />
+        <CollectionShowMore />
+      </CollectionsProvider>
+    </main>
   )
 }

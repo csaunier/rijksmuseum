@@ -1,26 +1,44 @@
 import { type FunctionComponent, useContext } from "react"
 import { CollectionsContext } from "../../contexts/CollectionsContext"
+import { EmptyStates } from "../EmptyStates/EmptyStates"
+
+import styles from "./CollectionsListing.module.css"
 
 export const CollectionsListing: FunctionComponent = () => {
   const { data } = useContext(CollectionsContext)
 
+  // Api has not yet answered
   if (!data) {
-    return "...Loading"
+    return <EmptyStates>...Loading</EmptyStates>
   }
 
+  // Api answers no collections
   if (data?.pages[0]?.count === 0) {
-    return "No collections to display"
+    return <EmptyStates>No collections to display</EmptyStates>
   }
 
   return (
-    <>
-      <ul>
-        {data?.pages.map((page) => {
-          return page.collections.map((collection) => {
-            return <li key={collection.objectNumber}>{collection.title}</li>
-          })
-        })}
-      </ul>
-    </>
+    <ul className={styles.wrapper}>
+      {data?.pages.map((page) => {
+        return page.collections.map((collection) => {
+          return (
+            <li className={styles.item} key={collection.objectNumber}>
+              <a href={collection.links.web}>
+                <figure className={styles.imageWrapper}>
+                  {collection.hasImage && collection.showImage && (
+                    <img
+                      className={styles.image}
+                      src={collection.webImage.url}
+                      alt={collection.title}
+                    />
+                  )}
+                  <figcaption className={styles.imageTitle}>{collection.longTitle}</figcaption>
+                </figure>
+              </a>
+            </li>
+          )
+        })
+      })}
+    </ul>
   )
 }

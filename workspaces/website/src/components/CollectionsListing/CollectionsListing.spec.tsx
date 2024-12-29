@@ -54,7 +54,7 @@ describe("CollectionsListing", () => {
                 self: "self",
                 web: "web",
               },
-              longTitle: "lonTitle",
+              longTitle: "longTitle",
               objectNumber: "0",
               permitDownload: true,
               principalOrFirstMaker: "principalOrFirstMaker",
@@ -83,6 +83,7 @@ describe("CollectionsListing", () => {
       </CollectionsContext.Provider>
     )
 
-    expect(screen.getByText("title")).toBeInTheDocument()
+    expect(screen.getByText("longTitle")).toBeInTheDocument()
+    expect(screen.getByRole("img", { name: "title" })).toBeInTheDocument()
   })
 })
