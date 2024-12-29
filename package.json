@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build": "(cd workspaces/website && npm run build)",
     "dev": "(cd workspaces/website && npm run dev)",
     "prettier": "prettier . --write",
     "prepare": "husky install",
