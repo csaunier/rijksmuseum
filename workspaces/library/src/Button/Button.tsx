@@ -10,7 +10,7 @@ type PolymorphicProps<E extends ElementType> = ComponentPropsWithoutRef<E> & {
 
 type ButtonProps<T extends ElementType> = PolymorphicProps<T> & PropsWithChildren
 
-export const Button = <T extends ElementType = "div">(props: ButtonProps<T>): ReactNode => {
+export const Button = <T extends ElementType = "button">(props: ButtonProps<T>): ReactNode => {
   const { as, children, className, ...restProps } = props
   const Component = as || "button"
   return (

@@ -11,7 +11,12 @@
     color 0.2s;
 }
 
-.button:hover {
+.button:not(:disabled):hover {
   color: white;
   background-color: black;
+}
+
+.button:disabled {
+  color: gray;
+  border-color: gray;
 }

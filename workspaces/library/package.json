@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "exports": {
-    "./Button": "./src/Button/Button.tsx"
+    "./Button": "./src/Button/Button.tsx",
+    "./Input": "./src/Input/Input.tsx"
   },
   "scripts": {
     "lint": "eslint .",
