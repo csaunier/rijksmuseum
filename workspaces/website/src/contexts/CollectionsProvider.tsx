@@ -10,7 +10,10 @@ export const CollectionsProvider: FunctionComponent<PropsWithChildren> = (props)
 
   const pageSize = 20
 
-  const { data, isFetching, fetchNextPage, hasNextPage } = useGetCollections({ search, pageSize })
+  const { data, error, isFetching, fetchNextPage, hasNextPage } = useGetCollections({
+    search,
+    pageSize,
+  })
 
   const enhancedSetSearch = (value: string) => {
     setSearch(value)
@@ -19,6 +22,7 @@ export const CollectionsProvider: FunctionComponent<PropsWithChildren> = (props)
 
   const context = {
     data,
+    error,
     isFetching,
     fetchNextPage,
     hasNextPage,

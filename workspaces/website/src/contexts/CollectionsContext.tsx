@@ -8,6 +8,7 @@ import type {
 
 export type CollectionsContextType = {
   data: InfiniteData<GetCollections, unknown> | undefined
+  error: Error | null
   isFetching: boolean
   fetchNextPage: (
     options?: FetchNextPageOptions
@@ -17,6 +18,7 @@ export type CollectionsContextType = {
 }
 export const CollectionsContext = createContext<CollectionsContextType>({
   data: undefined,
+  error: null,
   isFetching: false,
   fetchNextPage: () => Promise.reject(),
   hasNextPage: false,

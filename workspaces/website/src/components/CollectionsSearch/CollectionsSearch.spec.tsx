@@ -13,6 +13,7 @@ const context: CollectionsContextType = {
   hasNextPage: false,
   fetchNextPage: vitest.fn(),
   data: undefined,
+  error: null,
   isFetching: false,
 }
 

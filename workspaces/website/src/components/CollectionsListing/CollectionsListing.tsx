@@ -5,7 +5,18 @@ import { EmptyStates } from "../EmptyStates/EmptyStates"
 import styles from "./CollectionsListing.module.css"
 
 export const CollectionsListing: FunctionComponent = () => {
-  const { data } = useContext(CollectionsContext)
+  const { data, error } = useContext(CollectionsContext)
+
+  // API is in error
+  if (error) {
+    return (
+      <EmptyStates>
+        An error occurred. Please don't contact me !
+        <br />
+        API respond : {error.message}
+      </EmptyStates>
+    )
+  }
 
   // Api has not yet answered
   if (!data) {

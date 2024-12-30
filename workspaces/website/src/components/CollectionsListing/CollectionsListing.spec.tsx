@@ -8,6 +8,7 @@ const context: CollectionsContextType = {
   hasNextPage: false,
   fetchNextPage: vitest.fn(),
   data: undefined,
+  error: null,
   isFetching: false,
 }
 
@@ -22,7 +23,20 @@ describe("CollectionsListing", () => {
     expect(screen.getByText("...Loading")).toBeInTheDocument()
   })
 
+  it("should render error state", () => {
+    context.error = Error("Error 2024 !")
+
+    render(
+      <CollectionsContext.Provider value={context}>
+        <CollectionsListing />
+      </CollectionsContext.Provider>
+    )
+
+    expect(screen.getByText(/Error 2024 !/)).toBeInTheDocument()
+  })
+
   it("should render empty state", () => {
+    context.error = null
     context.data = { pages: [{ collections: [], count: 0 }], pageParams: [] }
 
     render(

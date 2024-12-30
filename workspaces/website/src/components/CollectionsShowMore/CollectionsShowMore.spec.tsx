@@ -12,6 +12,7 @@ const context: CollectionsContextType = {
   hasNextPage: false,
   fetchNextPage,
   data: undefined,
+  error: null,
   isFetching: false,
 }
 
